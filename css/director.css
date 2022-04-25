@@ -1,0 +1,161 @@
+.contain {
+  width: 65%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ----------------------------------
+テキスト部分
+---------------------------------- */
+#about {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#about h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#about .text {
+  font-size: 18px;
+  line-height: 4;
+  letter-spacing: 0.2em;
+}
+
+
+/* ----------------------------------------
+ディレクター紹介部分
+---------------------------------------- */
+#director-profile {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+/* -------------------------------
+顔写真(jsの動作に関するアニメーションあり）
+------------------------------- */
+#director-profile .face-photo #face {
+  width: 40%;
+  height: 45vh;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+#director-profile .face-photo #face.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#director-profile #title-name {
+  width: 40%;
+  margin: 15px auto 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+#director-profile #title-name.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#director-profile #title-name p:nth-child(1) {
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 0.2rem;
+}
+
+#director-profile #title-name p:nth-child(2) {
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 0.2rem;
+}
+
+
+
+#director-profile #profile-text {
+  width: 40%;
+  margin: 40px auto 0;
+  text-align: left;
+  font-size: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+#director-profile #profile-text.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* -------------------------------------
+レスポンシブ
+------------------------------------- */
+@media (max-width: 599px) {
+ 
+  .contain {
+    width: 100%;
+  }
+
+  /* ----------------------------
+  テキスト部分
+  ---------------------------- */
+  #about {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  #about h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #about .text {
+    font-size: 15px;
+    line-height: 4;
+    letter-spacing: 0.1em;
+  }
+
+  /*-----------------------------
+  ディレクター部分
+  ----------------------------- */
+
+  /* 顔写真 */
+  #director-profile {
+    margin-bottom: 30px;
+  }
+
+  #director-profile .face-photo #face {
+    width: 50%;
+    height: 45vh;
+  }
+
+  /* 氏名 */
+  #director-profile #title-name {
+    width: 50%;
+  }
+
+
+  #director-profile #title-name p:nth-child(1) {
+    font-size: 14px;
+    letter-spacing: 0.1rem;
+  }
+  
+  #director-profile #title-name p:nth-child(2) {
+    font-size: 25px;
+    letter-spacing: 0.1rem;
+  }
+
+  /* 経歴 */
+  #director-profile #profile-text {
+    width: 50%;
+    margin: 20px auto 0;
+    font-size: 14px;
+  }
+}

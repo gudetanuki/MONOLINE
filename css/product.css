@@ -1,0 +1,408 @@
+.contain {
+  width: 65%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#product-page {
+  text-align: center;
+}
+
+
+#product-page h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+  border-bottom: 4px solid #333;
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* -------------------------------
+商品の画像部分（フレックス）
+------------------------------- */
+.product-image {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.product-image .photo {
+  width: 50%;
+  height: 40vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image .photo #slides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 90%;
+  display: flex;
+  transition: transform 0.3s;
+}
+
+.product-image .photo #slides li {
+  min-width: 100%;
+  height: 100%;
+}
+
+.product-image .photo #slides li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -------------------------------------
+スライド画像下のボタン(jsで生成する）
+------------------------------------- */
+.product-image .photo #btnav {
+  width: 100%;
+  height: 10%;
+  padding-top: 10px;
+}
+
+.product-image .photo #btnav button {
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.product-image .photo #btnav .current {
+  background: #999;
+}
+
+
+/* -------------------------------------
+写真をスライドさせる左右のボタン（jsで実装）
+------------------------------------- */
+#prev, #next {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  color: rgba(0,0,0,0.9);
+  font-size: 25px;
+  padding: 0 4px 2px;
+  cursor: pointer;
+}
+
+#prev:hover ,#next:hover {
+  opacity: 0.3;
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* ---------------------------------
+商品名、価格、キャッチコピー
+--------------------------------- */
+.product-image .product-info {
+  width: 50%;
+  text-align: left;
+  padding: 30px 20px;
+}
+
+.product-image .product-info h4 {
+  font-size: 20px;
+}
+
+.product-image .product-info #price {
+  font-size: 20px;
+}
+
+.product-image .product-info #price span {
+  font-size: 12px;
+}
+
+.product-image .product-info #copy {
+  font-size: 25px;
+  letter-spacing: 0.1rem;
+  margin-top: 40px;
+}
+
+/* ---------------------------------------
+商品の特徴
+--------------------------------------- */
+#detail {
+  width: 100%;
+  margin: 40px 0;
+}
+
+
+#detail .flex {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+}
+
+/* --------------------------------
+植物成分イメージ写真横並び
+-------------------------------- */
+#detail .flex .herb-image {
+  width: 50%;
+  padding: 20px;
+}
+
+#detail .flex .herb-image .image {
+  width: 90%;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+#detail .flex .herb-image .image #coconut {
+  width: 40%;
+  height: 18vh;
+  background: url(../img/coconut-oil.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#detail .flex .herb-image .image #flower {
+  width: 40%;
+  height: 18vh;
+  background: url(../img/flower-essence.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#detail .flex .herb-image .annotation {
+  text-align: left;
+  background: white;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* -------------------------------------
+3つの特徴
+------------------------------------- */
+
+#detail .flex .detail-text {
+  width: 50%;
+  text-align: left;
+  padding: 25px;
+}
+
+#detail .flex .detail-text p {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+
+/* ----------------------------------------------
+カラー展開
+---------------------------------------------- */
+#all-colors {
+  width: 100%;
+  margin: 40px 0;
+}
+
+#all-colors .color-chert {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+#all-colors .color-chert .color {
+  width: 30%;
+  text-align: center;
+}
+
+#all-colors .color-chert .color img {
+  width: 70%;
+}
+
+#all-colors .color-chert .color h4 {
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+#all-colors .color-chert .color p {
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 10px;
+}
+
+
+
+/* ------------------------------------
+全成分
+------------------------------------ */
+#all-component {
+  width: 100%;
+  margin: 40px 0; 
+}
+
+
+#all-component p {
+  text-align: left;
+  width: 85%;
+  margin: 20px auto 0;
+  font-size: 13px;
+}
+
+
+
+/* -----------------------------------
+レスポンシブ
+----------------------------------- */
+@media (max-width: 599px) {
+  
+  .contain {
+    width: 100%;
+  }
+
+  #product-page h2 {
+    font-size: 20px;
+  }
+
+  /* --------------------------------
+  　商品画像・商品名・価格・キャッチコピー
+  -------------------------------- */
+  .product-image {
+    width: 100%;
+    height: 60vh;
+    flex-direction: column;
+  }
+
+  .product-image .photo {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .product-image .product-info {
+    width: 100%;
+  }
+
+  .product-image .product-info h4 {
+    font-size: 18px;
+  }
+  
+  .product-image .product-info #price {
+    font-size: 18px;
+  }
+  
+  .product-image .product-info #price span {
+    font-size: 12px;
+  }
+  
+  .product-image .product-info #copy {
+    font-size: 18px;
+    letter-spacing: 0.1rem;
+    margin-top: 20px;
+  }
+
+
+  /* ---------------------------------
+  商品の特徴
+  --------------------------------- */
+  #detail .flex {
+    width: 100%;
+    flex-direction: column;
+    margin: 20px auto 0;
+  }
+
+  #detail .flex .herb-image {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #detail .flex .herb-image .image {
+    width: 100%;
+  }
+
+  #detail .flex .herb-image .image #coconut {
+    width: 40%;
+    height: 20vh;
+  }
+
+  #detail .flex .herb-image .image #flower {
+    width: 40%;
+    height: 20vh;
+  }
+
+  #detail .flex .herb-image .annotation {
+    width: 100%;
+  }
+  
+  #detail .flex .detail-text {
+    width: 100%;
+    padding: 25px;
+  }
+  
+  #detail .flex .detail-text p {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+
+  /* --------------------------------
+  カラー展開
+  -------------------------------- */
+  #all-colors .color-chert {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  #all-colors .color-chert .color {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  #all-colors .color-chert .color img {
+    width: 40%;
+  }
+
+  #all-colors .color-chert .color .explanation {
+    width: 60%;
+    height: 90%;
+    margin: auto 0;
+    text-align: left;
+    padding: 10px;
+  }
+
+  #all-colors .color-chert .color .explanation h4 {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+  
+  #all-colors .color-chert .color .explanation p {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    font-size: 13px;
+  }
+}

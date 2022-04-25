@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 80%;
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* -----------------------------
+ヘッダー（通常時）
+----------------------------- */
+#header {
+  width: 100%;
+  height: 13%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header #logo {
+  width: 15%;
+  height: auto;
+}
+
+/* --------------------------------
+ヘッダー（スクロール時に表示される用）
+-------------------------------- */
+#header-sab {
+  width: 100%;
+  height: 11%;
+  background: rgba(255, 255, 255, 0.7);
+  padding-top: 30px;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#header-sab nav {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+}
+
+#header-sab nav ul {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header-sab nav ul li {
+  width: 30%;
+}
+
+
+
+
+/* ---------------------------------
+トップスライド画像部分(パララックス)
+--------------------------------- */
+main #slideshow {
+  background-image: url("../img/top_slide_1.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  background-repeat: no-repeat;
+  animation: image-slide 8s ease infinite; 
+}
+
+
+@keyframes image-slide {
+  0% {
+    background-image: url("../img/top_slide_1.jpg");
+  }
+  30% {
+    background-image: url("../img/top_slide_1.jpg");
+  }
+  45% {
+    background-image: url("../img/top_slide_2.jpg");
+  }
+  50% {
+    background-image: url("../img/top_slide_2.jpg");
+  }
+  70% {
+    background-image: url("../img/top_slide_2.jpg");
+  }
+  90% {
+    background-image: url("../img/top_slide_2.jpg");
+  }
+  100% {
+    background-image: url("../img/top_slide_1.jpg");
+  }
+}
+
+
+
+/* ---------------------------------------
+メッセージ部分
+--------------------------------------- */
+main #message {
+  width: 100%;
+  height: 55%;
+  background: #fff;
+  text-align: center;
+  padding: 70px;
+}
+
+main #message p {
+  display: inline;
+  font-size: 20px;
+  line-height: 3;
+  letter-spacing: 0.2em;
+} 
+
+
+
+
+/* ---------------------------------------
+商品ページに飛ぶ部分（Product→）
+--------------------------------------- */
+main #product {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+main #product .lip-image {
+  width: 35%;
+  height: 100%;
+  background-image: url(../img/product.jpg);
+  background-position: bottom;
+  background-size: cover;
+}
+
+#product a {
+  font-size: 50px;
+  width: 20%;
+  height: 15%;
+  margin: 250px auto 0;
+  text-align: center;
+}
+
+.arrow a::after {
+  position: absolute;
+  bottom: -15%;
+  left: 3%;
+  content: '';
+  width: 50%;
+  height: 5px;
+  border-right: 4px solid #333;
+  border-bottom: 3px solid #333;
+  transform: skew(45deg);
+  transition: all 0.3s;
+}
+
+.arrow a:hover::after{
+  width: 100%;
+}
+
+
+
+/* -----------------------------------------
+ディレクターページに飛ぶ部分（Director→）
+----------------------------------------- */
+#director {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+#director a {
+  font-size: 50px;
+  width: 20%;
+  height: 15%;
+  margin: 250px auto 0;
+  text-align: center;
+}
+
+#director .director-image {
+  width: 65%;
+  height: 100%;
+  background-image: url(../img/director.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+/* ------------------------------------------
+フッター
+------------------------------------------ */
+#footer {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer .footer-menu {
+  width: 50%;
+  height: auto;
+  text-align: center;
+}
+
+#footer .footer-menu li:nth-child(1){
+  padding-bottom: 10px;
+}
+
+#footer .footer-menu li:nth-child(2){
+  padding-bottom: 10px;
+}
+
+
+/* -------------------------------------
+レスポンシブ
+------------------------------------- */
+@media (max-width: 599px) {
+
+  /* --------------------------
+  ヘッダー
+  -------------------------- */
+  #header {
+    width: 100%;
+    height: 8%;
+  }
+
+  /* -----------------------------
+  トップスライド部分
+  ----------------------------- */
+  main #slideshow {
+    width: 100%;
+    height: 40vh;
+    background-attachment: scroll;
+  }
+
+  /* -------------------------------
+  メッセージ部分
+  ------------------------------- */
+  main #message {
+    height: 40%;
+    padding: 30px;
+  }
+
+  main #message p {
+    font-size: 15px;
+    letter-spacing: 0.1em;
+  } 
+
+  /* ------------------------------
+   商品ページに飛ぶ部分（Product→）
+   --------------------------------- */
+   main #product {
+    width: 100%;
+    height: 60vh;
+    flex-direction: column;
+  }
+
+  main #product .lip-image {
+    width: 100%;
+    height: 50vh;
+  }
+
+  #product a {
+    font-size: 30px;
+    width: 50%;
+    height: 10vh;
+    margin: 50px auto 30px;
+    text-align: center;
+  }
+
+  .arrow a::after {
+    position: absolute;
+    top: 50%;
+    left: 21%;
+    content: '';
+    width: 20%;
+    height: 5px;
+    border-right: 4px solid #333;
+    border-bottom: 3px solid #333;
+    transform: skew(45deg);
+    transition: all 0.3s;
+  }
+
+  /* ------------------------------------
+  ディレクターページに飛ぶ部分（Director→）
+  ------------------------------------ */
+  #director {
+    width: 100%;
+    height: 60vh;
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
+  
+  #director a {
+    font-size: 30px;
+    width: 50%;
+    height: 10vh;
+    margin: 50px auto 30px;
+  }
+
+  #director .director-image {
+    width: 100%;
+    height: 50vh;
+  }
+  
+
+  /* ------------------------------
+  フッター
+  --------------------------------*/
+  #footer {
+    width: 100%;
+    height: 20%;
+  }
+
+
+}
+
+
+
+
+
+
+
